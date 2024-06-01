@@ -11,4 +11,5 @@ export function createUser() {
     firstName: 'Guillaume',
     lastName: 'Salva',
   });
+  return Promise.reject();
 }
