@@ -1,9 +1,12 @@
+#!/usr/bin/env node
+
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
-export default function handleProfileSignup(firstName, lastName, filename) {
-  return Promise
-    .allSettled([signUpUser(firstName, lastName), uploadPhoto(filename)])
+export default function handleProfileSignup(firstName, lastName, fileName) {
+  const userPromise = signUpUser(firstName, lastName);
+  const photoPromise = uploadPhoto(fileName);
+  return Promise.allSettled([userPromise, photoPromise])
     .then((results) => results.map((obj) => ({
       status: obj.status,
       value: obj.status === 'fulfilled' ? obj.value : obj.reason.toString(),
