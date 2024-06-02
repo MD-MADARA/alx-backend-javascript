@@ -28,7 +28,7 @@ export default class HolbertonCourse {
   }
 
   get students() {
-    return this._length;
+    return this._students;
   }
 
   set students(value) {
@@ -58,4 +58,12 @@ export default class HolbertonCourse {
     if (typeof value !== 'string') throw error;
     return true;
   }
+}
+
+
+try {
+  const e = new HolbertonCourse("mo", 5, ["111"])
+  console.log(e.students)
+} catch (err) {
+  console.log(err.message)
 }
