@@ -59,11 +59,3 @@ export default class HolbertonCourse {
     return true;
   }
 }
-
-
-try {
-  const e = new HolbertonCourse("mo", 5, ["111"])
-  console.log(e.students)
-} catch (err) {
-  console.log(err.message)
-}
