@@ -6,11 +6,11 @@ const asyncUploadUser = async () => {
   let photo;
   let user;
   try {
-    photo = await uploadPhoto();
-    user = await createUser();
+    // photo = await uploadPhoto();
+    // user = await createUser();
+    [photo, user] = await Promise.all([uploadPhoto(), createUser()]);
   } catch (err) {
-    photo = null;
-    user = null;
+    [photo, user] = [null, null];
   }
   return { photo, user };
 };
