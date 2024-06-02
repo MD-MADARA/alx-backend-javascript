@@ -17,6 +17,26 @@ export default class HolbertonCourse {
     }
   }
 
+  get length() {
+    return this._length;
+  }
+
+  set length(value) {
+    if (this._lengthValidType(value)) {
+      this._length = value;
+    }
+  }
+
+  get students() {
+    return this._length;
+  }
+
+  set students(value) {
+    if (this._studentsValidType(value)) {
+      this._students = value;
+    }
+  }
+
   /* eslint-disable class-methods-use-this */
   _studentsValidType(arr) {
     const error = new TypeError('Students must be an array of strings');
