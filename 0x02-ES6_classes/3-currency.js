@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 export default class Currency {
-  constructor(name, code) {
-    this._name = name;
+  constructor(code, name) {
     this._code = code;
+    this._name = name;
   }
 
   get code() {
