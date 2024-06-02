@@ -10,6 +10,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .allSettled([userPromise, photoPromise])
     .then((results) => results.map((obj) => ({
       status: obj.status,
-      value: obj.status === 'fulfilled' ? obj.value : String(obj.reason),
+      value: obj.status === 'fulfilled' ? obj.value : obj.reason.toString(),
     })));
 }
